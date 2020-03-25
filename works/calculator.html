@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Calculator</title>
+		<style>
+			.button{
+					height:50px;
+					width:70px;
+					color:white;
+					background-color:black;
+					font-size:30px;
+					cursor:pointer;
+			}
+			#xo{
+					width:294px;
+					height:50px;
+					border:2px solid black;
+					font-size:30px;
+					background-color:lightblue;
+			}
+			.button:hover{
+				background-color:white;
+				color:black;
+			}
+			.ani{
+				border:5px solid black;
+				padding:15px;
+				margin-top:10%;
+				margin-left:40%;
+				width:295px;
+				background-color:grey;
+			}
+			body{
+				background:linear-gradient(to right,red,green,blue);
+			}
+			#yo:hover{
+				background-color:black;
+				color:green;
+			}
+			#yup{
+				font-size:18px;
+			}
+			#yup:hover{
+				
+				background-color:black;
+				color:red;
+			}
+			#nope{
+				font-size:20px;
+			}
+		</style>
+    </head>
+    <body>
+     	 <script>
+				function fun(val){
+				
+					document.getElementById("xo").value=document.getElementById("xo").value+val;
+				}
+				function equals(){
+						var str=document.getElementById("xo").value;
+						document.getElementById("xo").value=eval(str);
+				}
+				function clears(){
+						document.getElementById("xo").value=" ";
+				}
+				function remove(){
+						var exp=document.getElementById("xo").value;
+						document.getElementById("xo").value=exp.substr(0,exp.length-1);
+				}
+		 </script>
+		 <div class="ani">
+		  <input type="text" id="xo"><br><br>
+			<table>
+				<tr>
+					<td><input class="button" type="submit" value="1" onclick="fun(1)"></td>
+					<td><input class="button" type="submit" value="2" onclick="fun(2)"></td>
+					<td><input class="button" type="submit" value="3" onclick="fun(3)"></td>
+					<td><input class="button" type="submit" value="+" onclick="fun('+')"></td>
+				</tr>
+				<tr>
+					<td><input class="button" type="submit" value="4" onclick="fun(4)"></td>
+					<td><input class="button" type="submit" value="5" onclick="fun(5)"></td>
+					<td><input class="button" type="submit" value="6" onclick="fun(6)"></td>
+					<td><input class="button" type="submit" value="-" onclick="fun('-')"></td>
+				</tr>
+				<tr>
+					<td><input class="button" type="submit" value="7" onclick="fun(7)"></td>
+					<td><input class="button" type="submit" value="8" onclick="fun(8)"></td>
+					<td><input class="button" type="submit" value="9" onclick="fun(9)"></td>
+					<td><input class="button" type="submit" value="*" onclick="fun('*')"></td>
+				</tr>
+				<tr>
+					<td><input id="nope" class="button" type="submit" value="CLR" onclick="clears()"></td>
+					<td><input class="button" type="submit" value="0" onclick="fun(0)"></td>
+					<td><input class="button" type="submit" value="." onclick="fun('.')"></td>
+					<td><input class="button" type="submit" value="/" onclick="fun('/')"></td>
+				</tr>
+				<tr>
+					<td><input class="button" type="submit" value="(" onclick="fun('(')"></td>
+					<td><input id="yup" class="button" type="submit" value="x" onclick="remove()"></td>
+					<td><input class="button" type="submit" value=")" onclick="fun(')')"></td>
+					<td><input id="yo" class="button" type="submit" value="=" onclick="equals()"></td>
+				</tr>
+			</table>
+			</div>
+    </body>
+</html>
